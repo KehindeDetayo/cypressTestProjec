@@ -1,0 +1,138 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-10-08T20:01:18.694Z",
+    "end": "2022-10-08T20:01:47.740Z",
+    "duration": 29046,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "b1d55912-e6a2-4626-b0d5-e65cf35155e0",
+      "title": "",
+      "fullFile": "cypress/integration/RegressionTest.js",
+      "file": "cypress/integration/RegressionTest.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "040c779d-6760-40d7-a46a-66a0d709e6c7",
+          "title": "Quales Course Management Test Suite",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Validate that user can view landing page when they visit Quales learning app",
+              "fullTitle": "Quales Course Management Test Suite Validate that user can view landing page when they visit Quales learning app",
+              "timedOut": null,
+              "duration": 12111,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//visiting the quales app url\ncy.visit(\"http://tawdry-rule.surge.sh\"); //confirm that training field is visible\n//spy on training\ncy.contains('Training').should(\"be.visible\"); //assert that Courses field is visible\ncy.contains('Courses').should(\"be.visible\"); //assert that Contact Us field is visible\ncy.contains('Contact Us').should(\"be.visible\");",
+              "err": {},
+              "uuid": "5d1a803a-45ed-4cd1-b000-f7c31f09018a",
+              "parentUUID": "040c779d-6760-40d7-a46a-66a0d709e6c7",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Validate that user with valid details can login successfully into the Quales management app",
+              "fullTitle": "Quales Course Management Test Suite Validate that user with valid details can login successfully into the Quales management app",
+              "timedOut": null,
+              "duration": 8269,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//visiting the quales app url\ncy.visit(\"http://tawdry-rule.surge.sh\"); //spy login button and click\ncy.get('.css-48p1y4 > .MuiButton-root').click(); //spy email field and type valid email address ay@mail.com\ncy.get('[data-testid=EmailAddress]').type(\"ay@mail.com\"); //spy password field and type valid password pass1234\ncy.get('[data-testid=Password]').type(\"pass1234\"); //spy login button and click\ncy.get('.MuiButton-contained').click(); //confirm that user gets a pop up stating Login Suuccessfull\n//spy login toast message\ncy.contains('Login Successfull').should(\"be.visible\"); //confirm that url contains /courses upon successful login\ncy.url().should(\"contain\", \"/courses\"); //confirm that courses module is visible\ncy.contains('Courses').should(\"be.visible\"); //confirm that List of Courses module is visible\ncy.contains('List of Courses').should(\"be.visible\");",
+              "err": {},
+              "uuid": "6e9c163c-ccd2-48e3-ba59-d33ea65ba9e5",
+              "parentUUID": "040c779d-6760-40d7-a46a-66a0d709e6c7",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Validate that user with invalid details cannnot login successfully into the Quales management app",
+              "fullTitle": "Quales Course Management Test Suite Validate that user with invalid details cannnot login successfully into the Quales management app",
+              "timedOut": null,
+              "duration": 4213,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "//visiting the quales app url\ncy.visit(\"http://tawdry-rule.surge.sh\"); //spy login button and click\ncy.get('.css-48p1y4 > .MuiButton-root').click(); //spy email field and type invvalid email address yy@mail.com\ncy.get('[data-testid=EmailAddress]').type(\"yy@mail.com\"); //spy password field and type valid password pass1234\ncy.get('[data-testid=Password]').type(\"pass1234\"); //spy login button and click\ncy.get('.MuiButton-contained').click(); //confirm that url contains /login confirming that user cannot login\ncy.url().should(\"contain\", \"/login\"); //confirm that user gets pop up message \"Invalid Login Credenial\"\ncy.contains('Invalid Login Credential').should(\"be.visible\");",
+              "err": {},
+              "uuid": "17438d6c-a639-4c30-86d0-be6609708692",
+              "parentUUID": "040c779d-6760-40d7-a46a-66a0d709e6c7",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "5d1a803a-45ed-4cd1-b000-f7c31f09018a",
+            "6e9c163c-ccd2-48e3-ba59-d33ea65ba9e5",
+            "17438d6c-a639-4c30-86d0-be6609708692"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 24593,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": null,
+      "version": "6.2.0"
+    }
+  }
+}
